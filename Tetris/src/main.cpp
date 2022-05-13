@@ -42,10 +42,12 @@ int main()
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
 		{
 			tetro.rotate(90.0f);
+			sf::sleep(sf::milliseconds(100));
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
 		{
 			tetro.rotate(-90.0f);
+			sf::sleep(sf::milliseconds(100));
 		}
 
 		gameWindow.clear();

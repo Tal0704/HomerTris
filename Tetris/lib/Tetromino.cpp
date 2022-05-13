@@ -162,15 +162,10 @@ inline float angToRad(float angle)
 
 void Tetromino::rotate(float angle)
 {
-	angle = angToRad(angle);
+	sf::Transform transform;
+	transform.rotate(angle, this->m_origin);
 	for (auto& tetro : this->m_tetro)
 	{
-		sf::Vector2f pos = tetro.getPosition();
-		pos -= this->m_origin;
-		sf::Vector2f newPos;
-		newPos.x = roundf((pos.x * cosf(angle)) - (pos.y * sinf(angle)));
-		newPos.y = roundf((pos.x * sinf(angle)) + (pos.y * cosf(angle)));
-		newPos += this->m_origin;
-		tetro.setPosition(newPos);
+		tetro.setPosition(transform.transformPoint(tetro.getPosition()));
 	}
 }
