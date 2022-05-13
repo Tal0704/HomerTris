@@ -164,7 +164,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="lib\Tetromino.cpp" />
+    <ClCompile Include="lib\tetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\Tetromino.h" />

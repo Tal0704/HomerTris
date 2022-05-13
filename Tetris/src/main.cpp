@@ -17,7 +17,7 @@ int main()
 
 	sf::Sprite sprite(texture);
 
-	Tetromino tetro(Tetromino::Shape::O);
+	Tetromino tetro(Tetromino::Shape::T);
 
 	while (gameWindow.isOpen())
 	{
@@ -25,8 +25,27 @@ int main()
 		{
 			if (event.type == sf::Event::Closed)
 				gameWindow.close();
+#if defined(_DEBUG)
 			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter)
 				gameWindow.close();
+#endif
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+			tetro.move(0, -1);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+			tetro.move(0, 1);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+			tetro.move(1, 0);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+			tetro.move(-1, 0);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+		{
+			tetro.rotate(90.0f);
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+		{
+			tetro.rotate(-90.0f);
 		}
 
 		gameWindow.clear();
