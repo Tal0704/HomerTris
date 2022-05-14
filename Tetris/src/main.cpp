@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
-#include <Tetromino.h>
+#include <Board.h>
 
 #if defined(_DEBUG)
 #include <iostream>
@@ -8,16 +8,13 @@
 
 int main()
 {
-	sf::RenderWindow gameWindow(sf::VideoMode(300, 510), "Taltris");
+	Board gameWindow(sf::VideoMode(300, 510), "Taltris");
 	sf::Event event;
 
 	sf::Texture texture;
 	if (!texture.loadFromFile("media/tetros/blue.png"))
 		return -1;
-
-	sf::Sprite sprite(texture);
-
-	Tetromino tetro(Tetromino::Shape::T);
+	sf::RectangleShape shape(sf::Vector2f(50.0f, 50.0f));
 
 	while (gameWindow.isOpen())
 	{
@@ -31,27 +28,8 @@ int main()
 #endif
 		}
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-			tetro.move(0, -1);
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-			tetro.move(0, 1);
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			tetro.move(1, 0);
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-			tetro.move(-1, 0);
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-		{
-			tetro.rotate(90.0f);
-			sf::sleep(sf::milliseconds(100));
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
-		{
-			tetro.rotate(-90.0f);
-			sf::sleep(sf::milliseconds(100));
-		}
-
-		gameWindow.clear();
-		gameWindow.draw(tetro);
+		gameWindow.clear(sf::Color::Green);
+		gameWindow.draw(shape);
 		gameWindow.display();
 	}
 

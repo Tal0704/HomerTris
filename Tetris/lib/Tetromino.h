@@ -22,15 +22,7 @@ public:
 		Z,
 		T
 	};
-private:
-	std::array<sf::Sprite, 4> m_tetro;
-	sf::Texture m_texture;
-	sf::Vector2f m_origin;
-	sf::VertexArray m_middle;
-
-	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-
-public:
+	 
 	Tetromino(Tetromino::Shape shape);
 
 	void move(const sf::Vector2f& offset);
@@ -38,5 +30,11 @@ public:
 
 	void rotate(float angle);
 
+private:
+	std::array<sf::Sprite, 4> m_tetro;
+	sf::Texture m_texture;
+	sf::Vector2f m_origin;
+	sf::VertexArray m_middle;
 
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };

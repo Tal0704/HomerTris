@@ -131,8 +131,8 @@ void Tetromino::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	for (const auto& tetro: this->m_tetro)
 		target.draw(tetro, states);
 #if defined(_DEBUG)
-	target.draw(m_middle);
-#endif
+	target.draw(m_middle, sf::BlendMode(sf::BlendMode::OneMinusDstColor, sf::BlendMode::Zero, sf::BlendMode::Add));
+	#endif
 }
 
 void Tetromino::move(const sf::Vector2f& offset)
