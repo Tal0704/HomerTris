@@ -8,13 +8,9 @@
 
 int main()
 {
-	Board gameWindow(sf::VideoMode(300, 510), "Taltris");
+	sf::RenderWindow gameWindow(sf::VideoMode(310, 520), "Taltris");
 	sf::Event event;
-
-	sf::Texture texture;
-	if (!texture.loadFromFile("media/tetros/blue.png"))
-		return -1;
-	sf::RectangleShape shape(sf::Vector2f(50.0f, 50.0f));
+	Board board;
 
 	while (gameWindow.isOpen())
 	{
@@ -28,8 +24,14 @@ int main()
 #endif
 		}
 
-		gameWindow.clear(sf::Color::Green);
-		gameWindow.draw(shape);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		{
+			board.drop();
+			sf::sleep(sf::milliseconds(100));
+		}
+
+		gameWindow.clear();
+		gameWindow.draw(board);
 		gameWindow.display();
 	}
 

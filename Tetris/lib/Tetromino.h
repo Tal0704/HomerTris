@@ -30,7 +30,10 @@ public:
 
 	void rotate(float angle);
 
+	bool isInBounds();
+
 private:
+	bool m_inBounds;
 	std::array<sf::Sprite, 4> m_tetro;
 	sf::Texture m_texture;
 	sf::Vector2f m_origin;

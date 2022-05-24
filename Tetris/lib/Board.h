@@ -4,25 +4,27 @@
 #include <vector>
 #include <Tetromino.h>
 #include <string>
+#include <random>
 
-class Board : public sf::RenderWindow
+class Board : public sf::Drawable
 {
 public:
-	static Board* getInstance()
-	{
-		if (!m_instance)
-			m_instance = new Board;
-		return m_instance;
-	}
+	Board();
+	~Board();
 	 
-	void fall();
+	void drop();
+
+	void rotate(const float angle);
+
+	bool isGameOver();
 	
 private:
+	bool m_gameOver;
 	Tetromino* m_currentShape;
-
-	Board();
-
+	sf::Sprite m_background;
+	sf::Texture m_bgTexture;
 	std::vector<sf::Sprite> m_blocks;
-	static Board* m_instance;
+
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 

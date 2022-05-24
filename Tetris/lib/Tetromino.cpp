@@ -3,7 +3,7 @@
 #define BLOCK_LENGTH 30.0f
 #define PI 3.14159265358979323846  
 Tetromino::Tetromino(Tetromino::Shape shape)
-	: m_middle(sf::PrimitiveType::Points, 1)
+	: m_middle(sf::PrimitiveType::Points, 1), m_inBounds(true)
 {
 	for (auto& tetro : this->m_tetro)
 	{
@@ -138,8 +138,13 @@ void Tetromino::draw(sf::RenderTarget& target, sf::RenderStates states) const
 void Tetromino::move(const sf::Vector2f& offset)
 {
 	for (auto& tetro : this->m_tetro)
+	{
 		tetro.move(offset);
+		if (tetro.getPosition().x < 0.0f || tetro.getPosition().x > 520.0f)
+			this->m_inBounds = false;
+	}
 	this->m_origin += offset;
+
 #if defined(_DEBUG)
 	this->m_middle[0].position = this->m_origin;
 #endif
@@ -148,16 +153,15 @@ void Tetromino::move(const sf::Vector2f& offset)
 void Tetromino::move(float x, float y)
 {
 	for (auto& tetro : this->m_tetro)
+	{
 		tetro.move(x, y);
+		if (tetro.getPosition().x < 0.0f || tetro.getPosition().x > 520.0f)
+			this->m_inBounds = false;
+	}
 	this->m_origin += sf::Vector2f(x, y);
 #if defined(_DEBUG)
 	this->m_middle[0].position = this->m_origin;
 #endif
-}
-
-inline float angToRad(float angle)
-{
-	return angle * (PI / 180);
 }
 
 void Tetromino::rotate(float angle)
@@ -167,5 +171,12 @@ void Tetromino::rotate(float angle)
 	for (auto& tetro : this->m_tetro)
 	{
 		tetro.setPosition(transform.transformPoint(tetro.getPosition()));
+		if (tetro.getPosition().x < 0.0f || tetro.getPosition().x > 520.0f)
+			this->m_inBounds = false;
 	}
+}
+
+bool Tetromino::isInBounds()
+{
+	return this->m_inBounds;
 }

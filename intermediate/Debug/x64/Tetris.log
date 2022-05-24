@@ -1,40 +1,68 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(495,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(496,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Board.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(5630,27): error C2825: '_Urng': must be a class or namespace when followed by '::'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\random(1817): message : see reference to class template instantiation 'std::_Rng_from_urng<unsigned int,_Engine>' being compiled
+          with
+          [
+              _Engine=std::mt19937 (std::random_device (__cdecl *)(void))
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\random(1785): message : see reference to function template instantiation 'unsigned int std::uniform_int<_Ty>::_Eval<_Engine>(_Engine (__cdecl &),_Ty,_Ty) const' being compiled
+          with
+          [
+              _Ty=unsigned int,
+              _Engine=std::mt19937 (std::random_device (__cdecl *)(void))
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\random(1785): message : see reference to function template instantiation 'unsigned int std::uniform_int<_Ty>::_Eval<_Engine>(_Engine (__cdecl &),_Ty,_Ty) const' being compiled
+          with
+          [
+              _Ty=unsigned int,
+              _Engine=std::mt19937 (std::random_device (__cdecl *)(void))
+          ]
+C:\Users\tal\dev\c++\Tetris\Tetris\lib\Board.cpp(9): message : see reference to function template instantiation 'unsigned int std::uniform_int<_Ty>::operator ()<std::mt19937(std::random_device (__cdecl *)(void))>(_Engine (__cdecl &)) const' being compiled
+          with
+          [
+              _Ty=unsigned int,
+              _Engine=std::mt19937 (std::random_device (__cdecl *)(void))
+          ]
+C:\Users\tal\dev\c++\Tetris\Tetris\lib\Board.cpp(9): message : see reference to function template instantiation 'unsigned int std::uniform_int<_Ty>::operator ()<std::mt19937(std::random_device (__cdecl *)(void))>(_Engine (__cdecl &)) const' being compiled
+          with
+          [
+              _Ty=unsigned int,
+              _Engine=std::mt19937 (std::random_device (__cdecl *)(void))
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(5630,34): error C2510: '_Urng': left of '::' must be a class/struct/union
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(5630,1): error C2061: syntax error: identifier 'result_type'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(5632,41): error C2065: '_Ty1': undeclared identifier
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(5632,69): error C2065: '_Ty1': undeclared identifier
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(5632,20): error C2923: 'std::conditional_t': '_Ty1' is not a valid template type argument for parameter '_Ty2'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(5632): message : see declaration of '_Ty1'
   main.cpp
-  Tetromino.cpp
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(11,8): error C2259: 'Board': cannot instantiate abstract class
+C:\Users\tal\dev\c++\Tetris\Tetris\lib\Board.h(9): message : see declaration of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(11,8): message : due to following members:
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(11,8): message : 'void sf::Drawable::draw(sf::RenderTarget &,sf::RenderStates) const': is abstract
+C:\Users\tal\dev\c++\Tetris\Dependencies\SFML\include\SFML\Graphics\Drawable.hpp(69): message : see declaration of 'sf::Drawable::draw'
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(11,18): error C2259: 'Board': cannot instantiate abstract class
+C:\Users\tal\dev\c++\Tetris\Tetris\lib\Board.h(9): message : see declaration of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(11,18): message : due to following members:
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(11,18): message : 'void sf::Drawable::draw(sf::RenderTarget &,sf::RenderStates) const': is abstract
+C:\Users\tal\dev\c++\Tetris\Dependencies\SFML\include\SFML\Graphics\Drawable.hpp(69): message : see declaration of 'sf::Drawable::draw'
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(11,32): error C2661: 'Board::Board': no overloaded function takes 2 arguments
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(19,20): error C2039: 'isOpen': is not a member of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\lib\Board.h(9): message : see declaration of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(21,21): error C2039: 'pollEvent': is not a member of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\lib\Board.h(9): message : see declaration of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(24,16): error C2039: 'close': is not a member of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\lib\Board.h(9): message : see declaration of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(27,16): error C2039: 'close': is not a member of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\lib\Board.h(9): message : see declaration of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(31,14): error C2039: 'clear': is not a member of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\lib\Board.h(9): message : see declaration of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(32,24): error C2660: 'sf::Drawable::draw': function does not take 1 arguments
+C:\Users\tal\dev\c++\Tetris\Dependencies\SFML\include\SFML\Graphics\Drawable.hpp(69,18): message : see declaration of 'sf::Drawable::draw'
+C:\Users\tal\dev\c++\Tetris\Tetris\src\main.cpp(33,14): error C2039: 'display': is not a member of 'Board'
+C:\Users\tal\dev\c++\Tetris\Tetris\lib\Board.h(9): message : see declaration of 'Board'
+  tetromino.cpp
+C:\Users\tal\dev\c++\Tetris\Tetris\lib\tetromino.cpp(160,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Generating Code...
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::String::String(char const *,class std::locale const &)" (__imp_??0String@sf@@QEAA@PEBDAEBVlocale@std@@@Z) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::String::~String(void)" (__imp_??1String@sf@@QEAA@XZ) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::VideoMode::VideoMode(unsigned int,unsigned int,unsigned int)" (__imp_??0VideoMode@sf@@QEAA@III@Z) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: void __cdecl sf::Window::close(void)" (__imp_?close@Window@sf@@QEAAXXZ) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: bool __cdecl sf::Window::isOpen(void)const " (__imp_?isOpen@Window@sf@@QEBA_NXZ) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: bool __cdecl sf::Window::pollEvent(class sf::Event &)" (__imp_?pollEvent@Window@sf@@QEAA_NAEAVEvent@2@@Z) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: void __cdecl sf::Window::display(void)" (__imp_?display@Window@sf@@QEAAXXZ) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual __cdecl sf::Drawable::~Drawable(void)" (__imp_??1Drawable@sf@@UEAA@XZ) referenced in function "public: virtual __cdecl Tetromino::~Tetromino(void)" (??1Tetromino@@UEAA@XZ)
-Tetromino.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual __cdecl sf::Drawable::~Drawable(void)" (__imp_??1Drawable@sf@@UEAA@XZ)
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Color::Color(unsigned char,unsigned char,unsigned char,unsigned char)" (__imp_??0Color@sf@@QEAA@EEEE@Z) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Texture::Texture(void)" (__imp_??0Texture@sf@@QEAA@XZ) referenced in function main
-Tetromino.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Texture::Texture(void)" (__imp_??0Texture@sf@@QEAA@XZ)
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Texture::~Texture(void)" (__imp_??1Texture@sf@@QEAA@XZ) referenced in function "public: virtual __cdecl Tetromino::~Tetromino(void)" (??1Tetromino@@UEAA@XZ)
-Tetromino.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Texture::~Texture(void)" (__imp_??1Texture@sf@@QEAA@XZ)
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: bool __cdecl sf::Texture::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class sf::Rect<int> const &)" (__imp_?loadFromFile@Texture@sf@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$Rect@H@2@@Z) referenced in function main
-Tetromino.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: bool __cdecl sf::Texture::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class sf::Rect<int> const &)" (__imp_?loadFromFile@Texture@sf@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$Rect@H@2@@Z)
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: void __cdecl sf::RenderTarget::clear(class sf::Color const &)" (__imp_?clear@RenderTarget@sf@@QEAAXAEBVColor@2@@Z) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: void __cdecl sf::RenderTarget::draw(class sf::Drawable const &,class sf::RenderStates const &)" (__imp_?draw@RenderTarget@sf@@QEAAXAEBVDrawable@2@AEBVRenderStates@2@@Z) referenced in function main
-Tetromino.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __cdecl sf::RenderTarget::draw(class sf::Drawable const &,class sf::RenderStates const &)" (__imp_?draw@RenderTarget@sf@@QEAAXAEBVDrawable@2@AEBVRenderStates@2@@Z)
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::RenderWindow::RenderWindow(class sf::VideoMode,class sf::String const &,unsigned int,struct sf::ContextSettings const &)" (__imp_??0RenderWindow@sf@@QEAA@VVideoMode@1@AEBVString@1@IAEBUContextSettings@1@@Z) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual __cdecl sf::RenderWindow::~RenderWindow(void)" (__imp_??1RenderWindow@sf@@UEAA@XZ) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Sprite::Sprite(class sf::Texture const &)" (__imp_??0Sprite@sf@@QEAA@AEBVTexture@1@@Z) referenced in function main
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual __cdecl sf::Sprite::~Sprite(void)" (__imp_??1Sprite@sf@@UEAA@XZ) referenced in function "public: __cdecl std::array<class sf::Sprite,4>::~array<class sf::Sprite,4>(void)" (??1?$array@VSprite@sf@@$03@std@@QEAA@XZ)
-Tetromino.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual __cdecl sf::Sprite::~Sprite(void)" (__imp_??1Sprite@sf@@UEAA@XZ)
-main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: static class sf::RenderStates const sf::RenderStates::Default" (__imp_?Default@RenderStates@sf@@2V12@B) referenced in function main
-Tetromino.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Drawable::Drawable(void)" (__imp_??0Drawable@sf@@QEAA@XZ) referenced in function "public: __cdecl Tetromino::Tetromino(enum Tetromino::Shape)" (??0Tetromino@@QEAA@W4Shape@0@@Z)
-Tetromino.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: void __cdecl sf::Transformable::setPosition(class sf::Vector2<float> const &)" (__imp_?setPosition@Transformable@sf@@QEAAXAEBV?$Vector2@M@2@@Z) referenced in function "public: __cdecl Tetromino::Tetromino(enum Tetromino::Shape)" (??0Tetromino@@QEAA@W4Shape@0@@Z)
-Tetromino.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: void __cdecl sf::Transformable::setOrigin(float,float)" (__imp_?setOrigin@Transformable@sf@@QEAAXMM@Z) referenced in function "public: __cdecl Tetromino::Tetromino(enum Tetromino::Shape)" (??0Tetromino@@QEAA@W4Shape@0@@Z)
-Tetromino.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Sprite::Sprite(void)" (__imp_??0Sprite@sf@@QEAA@XZ) referenced in function "public: __cdecl std::array<class sf::Sprite,4>::array<class sf::Sprite,4>(void)" (??0?$array@VSprite@sf@@$03@std@@QEAA@XZ)
-Tetromino.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: void __cdecl sf::Sprite::setTexture(class sf::Texture const &,bool)" (__imp_?setTexture@Sprite@sf@@QEAAXAEBVTexture@2@_N@Z) referenced in function "public: __cdecl Tetromino::Tetromino(enum Tetromino::Shape)" (??0Tetromino@@QEAA@W4Shape@0@@Z)
-C:\Users\tal\dev\c++\Tetris\Dependencies\SFML\lib\sfml-graphics-d.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\tal\dev\c++\Tetris\Dependencies\SFML\lib\sfml-window-d.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\tal\dev\c++\Tetris\Dependencies\SFML\lib\sfml-system-d.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\tal\dev\c++\Tetris\Dependencies\SFML\lib\sfml-audio-d.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\tal\dev\c++\Tetris\\bin\Debug\x64\Tetris.exe : fatal error LNK1120: 24 unresolved externals
